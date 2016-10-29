@@ -6,8 +6,10 @@ window.hack.transactions = (function() {
   var dataTransactionWrapper = '[data-transaction-day]';
   var dataShowTransactions = '[data-show-transactions]';
   var dataTransactionItems = '[data-transaction-items]';
+  var dataTransactionUpgradeButton = '[data-transaction-item-upgrade]';
 
   var showTransactionButtons = Array.from(document.querySelectorAll(dataShowTransactions));
+  var transactionUpgradeButtons = Array.from(document.querySelectorAll(dataTransactionUpgradeButton));
 
   function init() {
     bindEventListeners();
@@ -17,6 +19,23 @@ window.hack.transactions = (function() {
     showTransactionButtons.forEach(function getSingleButton(button) {
       button.addEventListener('click', handleShowButtonClick , false);
     })
+
+    transactionUpgradeButtons.forEach(function getSingleUpgradeButton(upgradeButton) {
+      upgradeButton.addEventListener('click', handleUpgradeButtonClick, false);
+    })
+  }
+
+  function handleUpgradeButtonClick(event) {
+    var button = event.currentTarget;
+    var transactionName = button.dataset.transactionItemUpgrade.toLowerCase();
+
+    fetch(`/api/upgrade/${transactionName}`)
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function(json) {
+        console.log('upgrades', json);
+      })
   }
 
   function handleShowButtonClick(event) {
