@@ -2,17 +2,41 @@
 
 var utils = require('../utils/common');
 var templateHelpers = require('../templateHelpers.js');
-var transationData = require('../data/dummyTransationData');
+var apiService = require('../services/api-service');
 
 function createModel(staticData, canonicalUrl) {
 
-	return {
-		layout: false,
-		data: transationData,
-		helpers: templateHelpers,
-		canonicalUrl: canonicalUrl,
-		uuid: utils.randomGuid()
-	};
+	return new Promise(function(resolve, reject) {
+		apiService.getTransactions(function(transactionData) {
+			resolve({
+				layout: false,
+				data: transactionData,
+				helpers: templateHelpers,
+				canonicalUrl: canonicalUrl,
+				uuid: utils.randomGuid()
+			});
+		})
+	})
+
+	// apiService.getTransactions(function(transactionData) {
+	// 	console.log(transactionData);
+	//
+	// 	return {
+	// 		layout: false,
+	// 		data: transactionData,
+	// 		helpers: templateHelpers,
+	// 		canonicalUrl: canonicalUrl,
+	// 		uuid: utils.randomGuid()
+	// 	};
+	// })
+
+	// return {
+	// 	layout: false,
+	// 	data: transationData,
+	// 	helpers: templateHelpers,
+	// 	canonicalUrl: canonicalUrl,
+	// 	uuid: utils.randomGuid()
+	// };
 }
 
 module.exports = function(staticData, canonicalUrl) {

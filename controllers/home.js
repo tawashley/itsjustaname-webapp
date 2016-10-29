@@ -14,9 +14,12 @@ var HomeController = {
 
 		contentRepository.get(function(staticData) {
 			var canonicalUrl = utils.getCanonicalUrl(request);
-			var viewModel = new ViewModel(staticData, canonicalUrl);
+			var homeViewModel = ViewModel(staticData, canonicalUrl);
 
-			response.render('index', viewModel);
+			homeViewModel
+				.then(function(data) {
+					response.render('index', data);
+				});
 		});
 	}
 };

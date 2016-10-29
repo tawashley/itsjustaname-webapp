@@ -1,17 +1,21 @@
-(function () {
-  'use strict';
+var transationData = require('../data/dummyTransationData');
 
-	var promiseGet = require('request-promise');
-  var baseUrl = process.env.API_URL || 'http://api.codecomputerlove.com';
+var apiService = module.exports;
+var API_URL = 'http://itsjustaname-api.apphb.com';
 
-	module.exports = {
-    get: function(url, callback) {
-      promiseGet(baseUrl + url).then(function (data) {
-        callback(JSON.parse(data));
-      }).catch(function (err) {
-         console.error(err);
-         callback(null);
-      });
-		}
-  };
-}());
+var request = require('request');
+var options = {
+  json: true
+}
+
+apiService.getTransactions = function(callback) {
+  options.url = API_URL + '/transactions';
+
+  request(options, function (error, response, json) {
+
+      if (!error && response.statusCode === 200) {
+        callback(json);
+      }
+
+  })
+}
