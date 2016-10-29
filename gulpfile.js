@@ -38,7 +38,7 @@ config.isWatched  = argv.watch || false;
 \* ============================================================ */
 
 cartridge.modules.forEach(function(module) {
-	require(path.resolve('node_modules/' + module.task))(gulp, config, tasks);
+	require(path.join(__dirname, 'node_modules', module.task))(gulp, config, tasks);
 });
 
 gulp.task('clean', function () {
