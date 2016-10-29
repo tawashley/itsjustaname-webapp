@@ -2,3 +2,26 @@
 .transaction-day {
   text-align: center;
 }
+
+.transaction-day__content {
+  padding: $d-gutter--half 0;
+}
+
+.transaction-day__average-spend {
+  font-weight: normal;
+  font-size: 18px;
+  color: $c-brand-2;
+  opacity: .5;
+}
+
+.transaction-day__average-received {
+  font-weight: normal;
+  font-size: 32px;
+  color: $c-brand-3;
+}
+
+.transaction-day__date {
+  color: $c-brand-2;
+  margin-bottom: $d-gutter--half;
+  font-weight: normal;
+}

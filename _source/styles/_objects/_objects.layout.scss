@@ -37,3 +37,7 @@
 @include respond-to-min($med){
 	@include widths(12);
 }
+
+.u--txt-center {
+	text-align: center;
+}

@@ -1,12 +1,13 @@
-<p>
-  Name:
-  {{ itemData.name }}
-</p>
-<p>
-  Amount:
-  {{ itemData.amount }}
-</p>
-<p>
-  Type: 
-  {{ itemData.type }}
-</p>
+<div class="transaction-item">
+  <div class="transaction-item__content">
+    <p class="transaction-item__name">
+      {{ itemData.name }}
+    </p>
+    <p class="transaction-item__amount">
+      &#163;{{ itemData.amount }}
+    </p>
+    <p class="transaction-item__type">
+      {{ itemData.type }}
+    </p>
+  </div>
+</div>
