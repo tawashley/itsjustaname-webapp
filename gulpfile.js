@@ -51,6 +51,13 @@ gulp.task('clean', function () {
 
 gulp.task('watch', tasks.watch);
 
+gulp.task('test', function(cb) {
+	console.log('=============');
+	console.log('hits gulp test task');
+	console.log('=============');
+	cb();
+})
+
 // Task for local dev
 gulp.task('default', tasks.default.concat(['watch']));
 
