@@ -17,26 +17,6 @@ function createModel(staticData, canonicalUrl) {
 			});
 		})
 	})
-
-	// apiService.getTransactions(function(transactionData) {
-	// 	console.log(transactionData);
-	//
-	// 	return {
-	// 		layout: false,
-	// 		data: transactionData,
-	// 		helpers: templateHelpers,
-	// 		canonicalUrl: canonicalUrl,
-	// 		uuid: utils.randomGuid()
-	// 	};
-	// })
-
-	// return {
-	// 	layout: false,
-	// 	data: transationData,
-	// 	helpers: templateHelpers,
-	// 	canonicalUrl: canonicalUrl,
-	// 	uuid: utils.randomGuid()
-	// };
 }
 
 module.exports = function(staticData, canonicalUrl) {
