@@ -20,17 +20,17 @@
   @include btn();
 }
 
-.transaction-day__average-spend {
+.transaction-day__total-spend {
+  font-weight: normal;
+  font-size: 32px;
+  color: $c-brand-3;
+}
+
+.transaction-day__total-received {
   font-weight: normal;
   font-size: 18px;
   color: $c-brand-2;
   opacity: .5;
-}
-
-.transaction-day__average-received {
-  font-weight: normal;
-  font-size: 32px;
-  color: $c-brand-3;
 }
 
 .transaction-day__date {
