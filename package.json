@@ -4,7 +4,8 @@
   "description": "",
   "license": "ISC",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "ll -ls && cd node_modules"
   },
   "dependencies": {
     "del": "^2.1.0",
