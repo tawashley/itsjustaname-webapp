@@ -3,20 +3,14 @@
 function getTaskConfig(projectConfig) {
 	var taskConfig = {
 		useBabel: false,
-		useScantree: false,
+		useScantree: true,
 		files: {
 			main: {
+				generateDocs: false,
 				src: [
 					projectConfig.paths.src.scripts + '**/*.js',
 					projectConfig.paths.src.components + '**/*.js',
 					'!' + projectConfig.paths.src.scripts + 'vendor/*.js'
-				]
-			},
-			vendor: {
-				generateDocs: false,
-				lintFiles: false,
-				src: [
-					projectConfig.paths.src.scripts + 'vendor/*.js'
 				]
 			}
 		},
