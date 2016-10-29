@@ -34,8 +34,14 @@
 	width: 50%;
 }
 
+@include widths(12);
+
 @include respond-to-min($bp-med){
-	@include widths(12);
+	@include widths(12, "--md");
+}
+
+@include respond-to-min($bp-med){
+	@include widths(12, "--lg");
 }
 
 .u--txt-center {

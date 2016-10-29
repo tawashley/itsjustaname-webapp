@@ -28,7 +28,5 @@
 		<!--<![endif]-->
 		{{#if JS}}{{/if}}
 	</head>
-	<body class="paper--type-1">
-		{{> tag-manager/tag-manager }}
-		<div class="page-wrapper">
-		{{> site-header/site-header }}
+	<body>
+		{{> site-header/site-header data=summaryData }}

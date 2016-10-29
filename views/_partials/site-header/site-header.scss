@@ -1,0 +1,44 @@
+//Site header styles
+.site-header {
+  // background: $c-brand-2;
+}
+
+.site-header__section {
+  text-align: center;
+  color: $c-white;
+  padding: $d-gutter--half $d-gutter;
+}
+
+.site-header__section--top {
+  background: $c-brand-3;
+  text-transform: uppercase;
+}
+
+.site-header__section--bottom {
+  background: $c-brand-2;
+}
+
+.site-header__main-heading {
+  font-weight: normal;
+  color: $c-white;
+}
+
+.site-header__heading {
+  font-weight: normal;
+  color: $c-white;
+  margin-bottom: $d-gutter--half;
+
+  @include respond-to-min($bp-med) {
+    text-align: left;
+  }
+}
+
+.site-header__sub-heading {
+  font-weight: normal;
+  color: $c-white;
+  opacity: .5;
+
+  @include respond-to-min($bp-med) {
+    text-align: right;
+  }
+}
