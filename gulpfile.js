@@ -37,11 +37,10 @@ config.isWatched  = argv.watch || false;
 	TASK MODULES
 \* ============================================================ */
 
-console.log(path.join(__dirname, 'node_modules', module.task));
-
-// cartridge.modules.forEach(function(module) {
-// 	require(path.join(__dirname, 'node_modules', module.task))(gulp, config, tasks);
-// });
+cartridge.modules.forEach(function(module) {
+	// require(path.join(__dirname, 'node_modules', module.task))(gulp, config, tasks);
+	console.log(path.join(__dirname, 'node_modules', module.task));
+});
 
 gulp.task('clean', function () {
 	return del(config.cleanPaths);
