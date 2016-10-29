@@ -7,6 +7,10 @@
   padding: $d-gutter--half 0;
 }
 
+.transaction-day__transactions-wrapper {
+  display: none;
+}
+
 .transaction-day__average-spend {
   font-weight: normal;
   font-size: 18px;

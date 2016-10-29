@@ -5,7 +5,11 @@
     <h2 class="transaction-day__average-received">Average Received: &#163;{{ this.avgReceived }}</h2>
   </div>
 
-  {{#each this.transactions }}
-    {{> transaction-item/transaction-item itemData=this}}
-  {{/each}}
+  <button type="button" data-show-transactions>Show breakdown</button>
+
+  <div class="transaction-day__transactions-wrapper">
+    {{#each this.transactions }}
+      {{> transaction-item/transaction-item itemData=this}}
+    {{/each}}
+  </div>
 </section>

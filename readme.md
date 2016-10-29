@@ -35,7 +35,7 @@ The following Cartridge modules are used in this project
 [//]: <> (Modules start)
 Module | Version | Repo
 ------ | ------- | -----
-cartridge-copy-assets | 1.0.0 | https://github.com/cartridge/cartridge-copy-assetscartridge-sass | 2.2.0 | https://github.com/cartridge/cartridge-sass
+cartridge-copy-assets | 1.0.0 | https://github.com/cartridge/cartridge-copy-assetscartridge-sass | 2.2.0 | https://github.com/cartridge/cartridge-sasscartridge-javascript | 1.0.0 | https://github.com/cartridge/cartridge-javascript
 [//]: <> (Modules end)
 
 ### Adding modules
