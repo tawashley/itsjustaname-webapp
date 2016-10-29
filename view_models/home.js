@@ -6,17 +6,16 @@ var apiService = require('../services/api-service');
 
 function createModel(staticData, canonicalUrl) {
 
-	return new Promise(function(resolve, reject) {
-		apiService.getTransactions(function(transactionData) {
-			resolve({
+	return apiService.getTransactions()
+		.then(function(transactionData) {
+			return Promise.resolve({
 				layout: false,
 				data: transactionData,
 				helpers: templateHelpers,
 				canonicalUrl: canonicalUrl,
 				uuid: utils.randomGuid()
-			});
+			})
 		})
-	})
 }
 
 module.exports = function(staticData, canonicalUrl) {
