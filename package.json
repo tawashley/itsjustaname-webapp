@@ -4,7 +4,8 @@
   "description": "",
   "license": "ISC",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "gulp build --prod"
   },
   "dependencies": {
     "del": "^2.1.0",

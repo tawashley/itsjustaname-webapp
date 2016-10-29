@@ -11,3 +11,6 @@ logfile.txt
 # Dependencies
 node_modules
 logs
+public
+ie8.scss
+main.scss
