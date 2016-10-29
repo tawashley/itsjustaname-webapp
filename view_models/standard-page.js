@@ -2,7 +2,7 @@
   'use strict';
 
   var utils = require('../utils/common');
-  var templateHelpers = require('../templateHelpers.js')();
+  var templateHelpers = require('../templateHelpers.js');
 
   function createModel(staticData, contentData, canonicalUrl) {
     return {

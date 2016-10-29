@@ -1,5 +1,23 @@
 {{> header}}
 
-<h1>It's just a name, hello world</h1>
+{{#each data}}
+  <h1>Day of {{ this.date }}</h1>
+  <h2>Average Spend: {{ this.avgSpent }}</h2>
+  <h2>Average Recieved: {{ this.avgReceived }}</h2>
+  <h2>Transactions</h2>
+
+  {{#each this.transactions }}
+    <p>
+      {{ this.name }}
+    </p>
+    <p>
+      {{ this.amount }}
+    </p>
+    <p>
+      {{ this.type }}
+    </p>
+  {{/each}}
+
+{{/each}}
 
 {{> footer}}
