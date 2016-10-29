@@ -5,7 +5,7 @@
   "license": "ISC",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "ll -ls && cd node_modules"
+    "postinstall": "node node_modules/gulp/bin/gulp build"
   },
   "dependencies": {
     "del": "^2.1.0",
