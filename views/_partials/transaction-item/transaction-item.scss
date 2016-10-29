@@ -38,12 +38,28 @@
   margin: 0 auto;
   background: $c-brand-2;
   color: $c-white;
-  padding: 17.5% 0;
+  padding: 15% 0;
   border-radius: 50%;
   position: relative;
 
+  @include respond-to-min($bp-med) {
+    padding: 18% 0;
+  }
+
   @include respond-to-min($bp-large) {
     width: 20%;
-    padding: 7.5% 0;
+    padding: 7% 0;
   }
+}
+
+.transaction-item__name {
+  text-transform: capitalize;
+}
+
+.transaction-item__amount {
+  font-size: 28px;
+}
+
+.transaction-item__type {
+  text-transform: capitalize;
 }
