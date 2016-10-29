@@ -1,0 +1,28 @@
+//Button styling
+
+@mixin btn($type: 'primary') {
+
+  @if($type == 'primary') {
+    @include _btn-primary();
+  }
+
+  transition: background .2s ease-in-out;
+  padding: $d-gutter $d-gutter--double;
+  border-radius: 30px;
+  outline: 0;
+  border: 0;
+  font-size: 16px;
+}
+
+@mixin _btn-primary() {
+  background: $c-brand-2;
+  color: $c-white;
+
+  &:hover {
+    background: darken($c-brand-2, 10%);
+  }
+}
+
+.btn--primary {
+  @include btn($type: 'primary');
+}

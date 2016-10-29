@@ -9,10 +9,15 @@
 
 .transaction-day__transactions-wrapper {
   display: none;
+  margin: $d-gutter--half 0;
 
   &.is-visible {
     display: block;
   }
+}
+
+.transaction-day__button {
+  @include btn();
 }
 
 .transaction-day__average-spend {
