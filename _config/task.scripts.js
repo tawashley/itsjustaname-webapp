@@ -44,7 +44,7 @@ function getTaskConfig(projectConfig) {
 			"debug"         : false,
 			"eqnull"        : false,
 			"es5"           : false,
-			"esnext"        : false,
+			"esnext"        : true,
 			"evil"          : false,
 			"expr"          : false,
 			"funcscope"     : false,

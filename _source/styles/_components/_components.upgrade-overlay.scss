@@ -1,0 +1,55 @@
+// Upgrade overlay styles
+.upgrade-overlay {
+  background: $c-white;
+  padding: $d-gutter;
+}
+
+.upgrade-overlay__heading {
+  color: $c-brand-2;
+  border-bottom: 1px solid $c-brand-2;
+  margin-bottom: $d-gutter--half;
+  padding-bottom: $d-gutter--quarter;
+  font-weight: normal;
+}
+
+.upgrade-overlay__sub-heading {
+  margin-bottom: $d-gutter--half;
+  font-weight: normal;
+  color: $c-brand-5;
+}
+
+.upgrade-item__link {
+  text-decoration: none;
+  transition: background .2s;
+  padding: $d-gutter--half;
+  color: $c-black;
+
+  &:hover {
+    background: $c-brand-3;
+    transition: background .2s;
+    color: $c-white;
+
+    &:visited {
+      color: $c-white;
+    }
+  }
+
+  &:visited {
+    color: $c-black;
+  }
+}
+
+.upgrade-item__details {
+  display: inline-block;
+  padding: $d-gutter;
+}
+
+.upgrade-overlay__items {
+  list-style: none;
+}
+
+.upgrade-item__img {
+  float: left;
+  width: 70px;
+  height: 70px;
+}
