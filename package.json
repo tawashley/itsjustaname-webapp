@@ -5,7 +5,7 @@
   "license": "ISC",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "gulp test"
+    "postinstall": "gulp build --prod"
   },
   "dependencies": {
     "del": "^2.1.0",
@@ -26,9 +26,8 @@
     "rimraf": "^2.5.2",
     "streamifier": "^0.1.1",
     "xml2js": "^0.4.16",
-    "xmlbuilder": "^7.0.0"
-  },
-  "devDependencies": {
+    "xmlbuilder": "^7.0.0",
+    "devDependencies": {
     "cartridge-copy-assets": "^1.0.0",
     "cartridge-sass": "^2.2.0"
   }
