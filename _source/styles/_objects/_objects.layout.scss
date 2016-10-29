@@ -1,10 +1,10 @@
 //Layout - styles for all layout and or grid system
 
 .wrapper {
-	max-width: $max;
+	max-width: $bp-max;
 	margin: 0 auto;
 	padding: 0 remify(10px);
-	@include respond-to-min($small){
+	@include respond-to-min($bp-small){
 		padding: 0 remify(20px);
 	}
 }
@@ -24,7 +24,7 @@
 	padding-left: remify(10px);
 	width: 100%;
 	margin-bottom: 10px;
-	@include respond-to-min($med){
+	@include respond-to-min($bp-med){
 		margin-bottom: 0;
 	}
 }
@@ -34,7 +34,7 @@
 	width: 50%;
 }
 
-@include respond-to-min($med){
+@include respond-to-min($bp-med){
 	@include widths(12);
 }
 
