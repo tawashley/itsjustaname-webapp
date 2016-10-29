@@ -4,8 +4,7 @@
   "description": "",
   "license": "ISC",
   "scripts": {
-    "start": "gulp watch && gulp serve",
-    "test": "mocha"
+    "start": "node server.js"
   },
   "dependencies": {
     "del": "^2.1.0",
