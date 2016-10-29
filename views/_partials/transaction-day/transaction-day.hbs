@@ -1,8 +1,10 @@
-<h1>Day {{ this.date }}</h1>
-<h2>Average Spend: {{ this.avgSpent }}</h2>
-<h2>Average Recieved: {{ this.avgReceived }}</h2>
-<h2>Transactions</h2>
+<section class="transaction-day">
+  <h1>Day {{ this.date }}</h1>
+  <h2>Average Spend: {{ this.avgSpent }}</h2>
+  <h2>Average Recieved: {{ this.avgReceived }}</h2>
+  <h2>Transactions</h2>
 
-{{#each this.transactions }}
-  {{> transaction-item/transaction-item itemData=this}}
-{{/each}}
+  {{#each this.transactions }}
+    {{> transaction-item/transaction-item itemData=this}}
+  {{/each}}
+</section>
