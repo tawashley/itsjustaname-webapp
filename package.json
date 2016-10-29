@@ -7,6 +7,9 @@
     "start": "node server.js",
     "postinstall": "gulp build --prod"
   },
+  "engines": {
+    "node": "6.9.1"
+  },
   "dependencies": {
     "bluebird": "^3.3.4",
     "body-parser": "^1.11.0",
@@ -21,7 +24,7 @@
     "express-method-override": "0.0.3",
     "gulp": "^3.8.11",
     "multer": "^1.1.0",
-    "request": "^2.76.0",
+    "request": "^2.69.0",
     "request-promise": "^2.0.0",
     "restler": "^3.4.0",
     "rimraf": "^2.5.2",

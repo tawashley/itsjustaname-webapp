@@ -17,5 +17,19 @@ apiService.getTransactions = function() {
         }
 
     })
-  })
+  });
+}
+
+apiService.getSummary = function() {
+  options.url = API_URL + '/summary';
+
+  return new Promise(function(resolve, reject) {
+    request(options, function (error, response, json) {
+
+        if (!error && response.statusCode === 200) {
+          resolve(json);
+        }
+
+    })
+  });
 }

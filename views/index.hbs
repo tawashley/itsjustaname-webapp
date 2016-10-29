@@ -1,10 +1,8 @@
 {{> header}}
 
 <section class="wrapper">
-  <!-- <h1 class="u--txt-center">Transaction Breakdown</h1> -->
-
-  {{#each data}}
-    {{> transaction-day/transaction-day transactionData=data}}
+  {{#each data.transactions}}
+    {{> transaction-day/transaction-day transactionData=this}}
   {{/each}}
 </section>
 
