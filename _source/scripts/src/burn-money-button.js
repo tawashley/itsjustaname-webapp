@@ -30,14 +30,14 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
   function handleCloseBurnOverlay(event) {
     if (event.target.hasAttribute('data-burn-overlay-close')) {
       event.preventDefault();
-      burnMoneyButton.innerHTML = 'Burn some money!';
+      burnMoneyButton.innerHTML = 'Invest in assets';
       overlay.hide();
     }
   }
 
   function handleBuyItem(event){
     if (event.target.hasAttribute('data-burn-buy-item')) {
-      burnMoneyButton.innerHTML = 'Burn some money!';
+      burnMoneyButton.innerHTML = 'Invest in assets';
       overlay.hide();
     }
   }
