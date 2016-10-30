@@ -34,7 +34,7 @@ window.hack.needMoreMoney = (function(app, overlay, undefined) {
 		    return response.json();
 		  })
 		  .then(function(getMoreMoney) {
-	  		var randomIndex = Math.floor(Math.random() * getMoreMoney.length);  
+	  		var randomIndex = Math.floor(Math.random() * getMoreMoney.length);
 		    overlay.show({
 	      		contentHTML: getMoreMoneyHtml(getMoreMoney[randomIndex])
 		    });
@@ -44,14 +44,14 @@ window.hack.needMoreMoney = (function(app, overlay, undefined) {
 	function handleCloseGmmOverlay(event) {
 		if (event.target.hasAttribute('data-gmm-overlay-close')) {
 			event.preventDefault();
-			needMoreMoneyButton.innerHTML = 'I NEED MONEY!';
+			needMoreMoneyButton.innerHTML = 'I require investment capital';
 			overlay.hide();
-		}	
+		}
 	}
 
 	function handleBuyItem(event){
 		if (event.target.hasAttribute('data-gmm-buy-item')) {
-			needMoreMoneyButton.innerHTML = 'I NEED MONEY!';
+			needMoreMoneyButton.innerHTML = 'I require investment capital';
 			overlay.hide();
 		}
 	}
