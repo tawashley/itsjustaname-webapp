@@ -15,6 +15,7 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
   function bindEventListeners() {
     burnMoneyButton.addEventListener('click', handleBurnMoneyButtonClick, false);
     app.body.addEventListener('click', handleRefreshBurnMoney, false);
+    app.body.addEventListener('click', handleCloseBurnOverlay, false);
   }
 
   function handleRefreshBurnMoney(event) {
@@ -25,15 +26,21 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
     }
   }
 
-  function getSpendHtml(spendjson) {
-    console.log(spendjson);
+  function handleCloseBurnOverlay(event) {
+    if (event.target.hasAttribute('data-burn-overlay-close')) {
+      event.preventDefault();
+      burnMoneyButton.innerHTML = 'Burn some money!';
+      overlay.hide();
+    }
+  }
 
+  function getSpendHtml(spendjson) {
     var html = [];
 
     html.push(`<div class="wrapper">`);
     html.push(`<div class="upgrade-overlay overlay-narrow">`);
 
-    html.push(`<button type="button" class="upgrade-overlay__close" data-overlay-close>&#10060</button>`);
+    html.push(`<button type="button" class="upgrade-overlay__close" data-burn-overlay-close>&#10060</button>`);
     html.push(`<h1 class="upgrade-overlay__heading">${spendjson.name}</h1>`);
 
     html.push(`<div class="spend__details">`);
