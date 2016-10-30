@@ -13,7 +13,9 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
   }
 
   function bindEventListeners() {
-    burnMoneyButton.addEventListener('click', handleBurnMoneyButtonClick, false);
+    if(burnMoneyButton) {
+      burnMoneyButton.addEventListener('click', handleBurnMoneyButtonClick, false);
+    }
     app.body.addEventListener('click', handleRefreshBurnMoney, false);
     app.body.addEventListener('click', handleCloseBurnOverlay, false);
     app.body.addEventListener('click', handleBuyItem, false);
