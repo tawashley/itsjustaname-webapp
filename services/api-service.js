@@ -3,7 +3,7 @@ var request = require('request');
 
 var API_URL = 'http://itsjustaname-api.apphb.com';
 var API_URL_DEV = 'http://itsjustaname-api-dev.apphb.com';
-var API_TO_USE = API_URL_DEV;
+var API_TO_USE = API_URL;
 var options = {
   json: true
 }
