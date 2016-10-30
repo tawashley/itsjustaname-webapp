@@ -15,7 +15,7 @@ function mapFormData(requestBody) {
 
 		requestData.transactions.push({
 			"merchant": requestBody[element + '-name'],
-			"amount": requestBody[element + '-amount'],
+			"amount": Math.round(requestBody[element + '-amount']),
 			"creditOrDebit": (requestBody[element + '-creditdebit'] === 'true') ? 'Debit' : 'Credit',
 			"createdDate": new Date().toISOString()
 		})
