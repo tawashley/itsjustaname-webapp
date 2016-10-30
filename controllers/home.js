@@ -12,15 +12,13 @@ var HomeController = {
 			return response.sendStatus(400);
 		}
 
-		contentRepository.get(function(staticData) {
-			var canonicalUrl = utils.getCanonicalUrl(request);
-			var homeViewModel = ViewModel(staticData, canonicalUrl);
+		var canonicalUrl = utils.getCanonicalUrl(request);
+		var homeViewModel = ViewModel({}, canonicalUrl);
 
-			homeViewModel
-				.then(function(data) {
-					response.render('index', data);
-				});
-		});
+		homeViewModel
+			.then(function(data) {
+				response.render('index', data);
+			});
 	}
 };
 
