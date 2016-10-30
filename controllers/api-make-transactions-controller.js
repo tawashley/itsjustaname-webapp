@@ -11,6 +11,8 @@ function mapDataToSendToApi() {
 var apiUpgradeController = {
 
 	post: function(request, response) {
+		console.log('hits 1');
+
 		apiService.sendTransactions({
 			transactions: [
 				{

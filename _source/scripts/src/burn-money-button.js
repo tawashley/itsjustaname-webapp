@@ -71,8 +71,19 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
     overlay.setContent(html.join(''));
   }
 
+  function getFetchObject() {
+    var header = new Headers();
+    header.append('pragma', 'no-cache');
+    header.append('cache-control', 'no-cache');
+
+    return {
+      method: 'GET',
+      headers: header,
+    };
+  }
+
   function refreshBurnMoneyUi() {
-    fetch(`/api/spend`)
+    fetch(`/api/spend`, getFetchObject())
       .then(function(response) {
         return response.json();
       })
@@ -84,7 +95,7 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
   function handleBurnMoneyButtonClick() {
     burnMoneyButton.innerHTML = 'Getting a product...';
 
-    fetch(`/api/spend`)
+    fetch(`/api/spend`, getFetchObject())
       .then(function(response) {
         return response.json();
       })

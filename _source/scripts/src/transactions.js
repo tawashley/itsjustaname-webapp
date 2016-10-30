@@ -54,13 +54,24 @@ window.hack.transactions = (function(app, overlay, undefined) {
     return html.join('');
   }
 
+  function getFetchObject() {
+    var header = new Headers();
+    header.append('pragma', 'no-cache');
+    header.append('cache-control', 'no-cache');
+
+    return {
+      method: 'GET',
+      headers: header,
+    };
+  }
+
   function handleUpgradeButtonClick(event) {
     var button = event.currentTarget;
     var transactionName = button.dataset.transactionItemUpgrade.toLowerCase();
 
     event.preventDefault();
 
-    fetch(`/api/upgrade/${transactionName}`)
+    fetch(`/api/upgrade/${transactionName}`, getFetchObject())
       .then(function(response) {
         return response.json();
       })
