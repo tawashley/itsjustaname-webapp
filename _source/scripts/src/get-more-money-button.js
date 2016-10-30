@@ -14,8 +14,16 @@ window.hack.needMoreMoney = (function(app, overlay, undefined) {
 
 	function bindEventListeners() {
 		needMoreMoneyButton.addEventListener('click', handleNeedMoreMoneyButtonClick, false);
+		app.body.addEventListener('mouseover', handleNoBuyButton, false);
 	    app.body.addEventListener('click', handleCloseGmmOverlay, false);
 	    app.body.addEventListener('click', handleBuyItem, false);
+	}
+
+	function handleNoBuyButton(event) {
+		if (event.target.hasAttribute('data-gmm-no-buy')) {
+			event.target.style.left = (Math.random()*300)+"px";
+	        event.target.style.top = (Math.random()*300)+"px";
+    	}
 	}
 
 	function handleNeedMoreMoneyButtonClick() {
@@ -62,7 +70,7 @@ window.hack.needMoreMoney = (function(app, overlay, undefined) {
 		html.push(`<h2 class="upgrade-overlay__sub-heading">&#163;${getMoreMoney.notes}</h2>`);
 		html.push(`<img class="spend__image" src="${getMoreMoney.bigImageUrl || getMoreMoney.imageUrl}"/>`);
 		html.push(`<a class="spend__link" href="${getMoreMoney.link}" class="btn--primary" target="_blank" data-gmm-buy-item>I want it!</a>`);
-		html.push(`<a class="spend__link spend__link--secondary" href="#" data-burn-money-refresh class="">Oh heeeell no!</a>`);
+		html.push(`<a class="spend__link spend__link--secondary btn--moving" href="#" data-gmm-no-buy>Oh heeeell no!</a>`);
 
 		html.push(`</div>`);
 		html.push(`</div>`);
