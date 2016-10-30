@@ -1,5 +1,28 @@
 {{> header summaryData=data.summary}}
 
+{{#if data.summary.spendingSuggestions}}
+  <section class="wrapper">
+    <div class="grid">
+      <div class="col">
+        <h1 class="suggestions__heading">Spending Suggestions</h1>
+      </div>
+      {{#each data.summary.spendingSuggestions}}
+        <div class="col col--1/2--md">
+          <div class="suggestion__container">
+            <h1 class="upgrade-overlay__heading suggestion__heading">{{ this.name }}</h1>
+
+            <div class="spend__details">
+            <h2 class="upgrade-overlay__sub-heading">&#163;{{ this.price }}</h2>
+            <img class="spend__image" src="{{this.imageUrl}}"/>
+            <a class="spend__link" href="{{this.linkToArticle}}" class="btn--primary" target="_blank" data-burn-buy-item>Take me to the store!</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </section>
+{{/if}}
+
 <section class="wrapper">
   {{#each data.transactions}}
     {{> transaction-day/transaction-day transactionData=this}}

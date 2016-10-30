@@ -35,7 +35,7 @@ var apiUpgradeController = {
 
 			var canonicalUrl = utils.getCanonicalUrl(request);
 
-			response.url = '/';
+			console.log(jsonResponse.summary);
 
 			response.render('index', {
 				layout: false,
