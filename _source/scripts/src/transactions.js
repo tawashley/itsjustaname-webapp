@@ -32,13 +32,13 @@ window.hack.transactions = (function(app, overlay, undefined) {
     html.push(`<div class="wrapper">`);
     html.push(`<div class="upgrade-overlay">`);
     html.push(`<button type="button" class="upgrade-overlay__close" data-overlay-close>&#10060</button>`);
-    html.push(`<h1 class="upgrade-overlay__heading">Tied of NOT paying premium?</h1>`);
+    html.push(`<h1 class="upgrade-overlay__heading">Tired of NOT paying premium?</h1>`);
     html.push(`<h2 class="upgrade-overlay__sub-heading">Go on, spoil yourself!</h2>`);
     html.push(`<ul class="upgrade-overlay__items">`);
 
     for (var i = 0; i < json.length; i++) {
       html.push(`<li class="upgrade-overlay__item">`);
-      html.push(`<a class="upgrade-item__link clearfix" href="${json[i].link}">`);
+      html.push(`<a class="upgrade-item__link clearfix" href="${json[i].link}" target="_blank">`);
       html.push(`<img class="upgrade-item__img" src="${json[i].imageUrl}" />`);
       html.push(`<div class="upgrade-item__details">`);
       html.push(`<p class="upgrade-item__name">${json[i].name}</p>`);
