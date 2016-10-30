@@ -21,13 +21,13 @@ window.hack.makeTransactions = (function(overlay, undefined) {
   function bindEventListeners() {
     if(document.querySelector('[data-make-transaction-form]')) {
       transactionAddLineButton.addEventListener('click', handleAddLineButtonClick, false);
-    }
 
-    transactionForm.addEventListener('submit', function(event) {
-      overlay.show({
-        contentHTML: getLoadingHTML()
-      });
-    }, false);
+      transactionForm.addEventListener('submit', function(event) {
+        overlay.show({
+          contentHTML: getLoadingHTML()
+        });
+      }, false);
+    }
   }
 
   function getLoadingHTML() {

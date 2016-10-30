@@ -13,10 +13,13 @@ window.hack.needMoreMoney = (function(app, overlay, undefined) {
 	}
 
 	function bindEventListeners() {
-		needMoreMoneyButton.addEventListener('click', handleNeedMoreMoneyButtonClick, false);
+		if(needMoreMoneyButton) {
+			needMoreMoneyButton.addEventListener('click', handleNeedMoreMoneyButtonClick, false);
+		}
+		
 		app.body.addEventListener('mouseover', handleNoBuyButton, false);
     app.body.addEventListener('click', handleCloseGmmOverlay, false);
-    app.body.addEventListener('click', handleBuyItem, false);
+  	app.body.addEventListener('click', handleBuyItem, false);
 	}
 
 	function handleNoBuyButton(event) {
