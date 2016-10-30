@@ -4,7 +4,6 @@
   position: relative;
   display: block;
   text-decoration: none;
-  cursor: none;
 
   @include respond-to-min($bp-large) {
     padding-bottom: 10%;
@@ -43,7 +42,7 @@
 .transaction-item__content {
   width: 50%;
   margin: 0 auto;
-  background: $c-brand-2;
+  background-color: $c-brand-2;
   color: $c-white;
   padding: 15% 0;
   border-radius: 50%;
@@ -60,9 +59,31 @@
   }
 
   .transaction-item--upgrade & {
-    background: $c-brand-6;
+    background-color: $c-brand-6;
     cursor: help;
   }
+}
+
+.transaction-item__content--has-image {
+  background-size: cover;
+  background-position: 50% 50%;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.35);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+.transaction-item__content-inner {
+  position: relative;
 }
 
 .transaction-item__name {
