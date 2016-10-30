@@ -2,9 +2,16 @@
 .transaction-item {
   padding-bottom: 25%;
   position: relative;
+  display: block;
+  text-decoration: none;
+  cursor: none;
 
   @include respond-to-min($bp-large) {
     padding-bottom: 10%;
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 
   &::before {
@@ -50,6 +57,11 @@
   @include respond-to-min($bp-large) {
     width: 20%;
     padding: 6.5% 0;
+  }
+
+  .transaction-item--upgrade & {
+    background: $c-brand-6;
+    cursor: help;
   }
 }
 

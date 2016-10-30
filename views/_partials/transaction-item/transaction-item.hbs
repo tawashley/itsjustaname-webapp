@@ -1,4 +1,4 @@
-<div class="transaction-item">
+<a type="button" class="transaction-item {{#if itemData.hasUpgrade}}transaction-item--upgrade{{/if}}" {{#if itemData.hasUpgrade}}data-transaction-item-upgrade="{{itemData.name}}"{{/if}}>
   <div class="transaction-item__content">
     <p class="transaction-item__name">
       {{ itemData.name }}
@@ -10,8 +10,4 @@
       {{ itemData.type }}
     </p>
   </div>
-
-  {{#if itemData.hasUpgrade}}
-    <button type="button" name="button" data-transaction-item-upgrade="{{itemData.name}}">One up this purchase!</button>
-  {{/if}}
-</div>
+</a>

@@ -58,6 +58,8 @@ window.hack.transactions = (function(app, overlay, undefined) {
     var button = event.currentTarget;
     var transactionName = button.dataset.transactionItemUpgrade.toLowerCase();
 
+    event.preventDefault();
+
     fetch(`/api/upgrade/${transactionName}`)
       .then(function(response) {
         return response.json();
