@@ -23,7 +23,7 @@ app.set('locale', 'en-gb');
 app.use(express.static(path.join(__dirname, './public')));
 app.use(logger({path: './logs/logfile.txt'}));
 app.use(json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
 app.use(require('./middleware/expiry-headers'));
 app.use(require('./middleware/strip-slash'));

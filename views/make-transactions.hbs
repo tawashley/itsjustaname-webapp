@@ -1,0 +1,24 @@
+{{> header summaryData=data.summary}}
+
+<section class="wrapper">
+  <!-- NAME (TEXT)  -->
+  <!-- CREDIT OR DEBIT (CHECKBOX)  -->
+  <!-- AMOUNT (AMOUNT)  -->
+  <!-- DATE (GENERATED)  -->
+  <form action="/api/make-transactions" method="POST">
+    <ul>
+      <li>
+        <label for="transaction01-name">Name:</label>
+        <input type="text" id="transaction01-name" name="transaction01-name" value="">
+        <label for="transaction01-creditdebit">Credit / Debit</label>
+        <input type="checkbox" id="transaction01-creditdebit" name="transaction01-creditdebit" value="">
+        <label for="transaction01-amount">Amount</label>
+        <input type="number" id="transaction01-amount" name="transaction01-amount" value="">
+      </li>
+    </ul>
+
+    <button>Use my money!</button>
+  </form>
+</section>
+
+{{> footer}}

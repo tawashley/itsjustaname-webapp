@@ -19,6 +19,18 @@ function apiRequest() {
   });
 }
 
+function apiRequestPost() {
+  return new Promise(function(resolve, reject) {
+    request.post(options, function (error, httpResponse, body) {
+
+        if (!error && httpResponse.statusCode === 200) {
+          resolve(body);
+        }
+
+    })
+  });
+}
+
 apiService.getTransactions = function() {
   options.url = `${API_URL}/transactions`;
 
@@ -41,4 +53,11 @@ apiService.getSpendData = function() {
   options.url = `${API_URL}/spend/`;
 
   return apiRequest();
+}
+
+apiService.sendTransactions = function(formData) {
+  options.url =  `${API_URL}/userdata/`;
+  options.form = formData;
+
+  return apiRequestPost(formData);
 }
