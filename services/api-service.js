@@ -3,6 +3,7 @@ var request = require('request');
 
 var API_URL = 'http://itsjustaname-api.apphb.com';
 var API_URL_DEV = 'http://itsjustaname-api-dev.apphb.com';
+var API_TO_USE = API_URL_DEV;
 var options = {
   json: true
 }
@@ -32,37 +33,37 @@ function apiRequestPost() {
 }
 
 apiService.getTransactions = function() {
-  options.url = `${API_URL}/transactions`;
+  options.url = `${API_TO_USE}/transactions`;
 
   return apiRequest();
 }
 
 apiService.getSummary = function() {
-  options.url = `${API_URL}/summary`;
+  options.url = `${API_TO_USE}/summary`;
 
   return apiRequest();
 }
 
 apiService.getUpgradeData = function(itemName) {
-  options.url = `${API_URL}/upgrade/${itemName}`
+  options.url = `${API_TO_USE}/upgrade/${itemName}`
 
   return apiRequest();
 }
 
 apiService.getSpendData = function() {
-  options.url = `${API_URL}/spend/`;
+  options.url = `${API_TO_USE}/spend/`;
 
   return apiRequest();
 }
 
 apiService.getAlternativeIncome = function() {
-  options.url = `${API_URL}/alternativeincome/`;
+  options.url = `${API_TO_USE}/alternativeincome/`;
 
   return apiRequest();
 }
 
 apiService.sendTransactions = function(formData) {
-  options.url =  `${API_URL}/userdata/`;
+  options.url =  `${API_TO_USE}/userdata/`;
   options.form = formData;
 
   return apiRequestPost(formData);
