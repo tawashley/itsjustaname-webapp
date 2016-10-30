@@ -1,11 +1,17 @@
 <section class="transaction-day" data-transaction-day>
-  <div class="transaction-day__content">
-    <h1 class="transaction-day__date">{{ this.date }}</h1>
-    <h2 class="transaction-day__total-spend">Total Spent: &#163;{{ this.totalSpent }}</h2>
-    <h2 class="transaction-day__total-received">Total Received: &#163;{{ this.totalReceived }}</h2>
-  </div>
 
-  <button type="button" class="transaction-day__button" data-show-transactions>Show transactions</button>
+  <div class="grid">
+    <div class="col col--3/4--md">
+      <div class="transaction-day__content">
+        <h1 class="transaction-day__date">{{ this.date }}</h1>
+        <h2 class="transaction-day__total-spend">Total Spent: &#163;{{ this.totalSpent }}</h2>
+        <h2 class="transaction-day__total-received">Total Received: &#163;{{ this.totalReceived }}</h2>
+      </div>
+    </div>
+    <div class="col col--1/4--md">
+      <button type="button" class="transaction-day__button" data-show-transactions>Show transactions</button>
+    </div>
+  </div>
 
   <div class="transaction-day__transactions-wrapper" data-transaction-items>
     {{#each this.transactions }}

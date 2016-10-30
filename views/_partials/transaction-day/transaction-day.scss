@@ -2,6 +2,10 @@
 .transaction-day {
   text-align: center;
   margin: $d-gutter--double 0;
+
+  @include respond-to-min($bp-med) {
+    text-align: left;
+  }
 }
 
 .transaction-day__content {
@@ -38,4 +42,8 @@
   color: $c-brand-2;
   margin-bottom: $d-gutter--half;
   font-weight: normal;
+}
+
+.transaction-item__content-inner {
+  text-align: center;
 }

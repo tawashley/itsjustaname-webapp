@@ -84,7 +84,8 @@ window.hack.transactions = (function(app, overlay, undefined) {
 
   function handleShowButtonClick(event) {
     var transactionItemsButton = event.currentTarget;
-    var transactionWrapper = transactionItemsButton.parentNode;
+    //Grr...
+    var transactionWrapper = transactionItemsButton.parentNode.parentNode.parentNode;
     var transactionItems = transactionWrapper.querySelector(dataTransactionItems);
 
     transactionItems.classList.toggle(app.class.isVisible);
