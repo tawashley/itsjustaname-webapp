@@ -1,36 +1,47 @@
 <header class="site-header">
   <div class="site-header__section site-header__section--top">
     <div class="wrapper">
-      <h1 class="site-header__main-heading">It's just an app</h1>
+      <h1 class="site-header__main-heading">eSpendor</h1>
+      <nav class="main-buttons">
+        <button type="button" class="btn--primary" data-need-more-money>Get some money</button>
+        <button type="button" class="btn--primary" data-burn-money>Waste some money</button>
+      </nav>
     </div>
   </div>
-  <div class="site-header__section site-header__section--bottom">
-    <div class="wrapper">
-      <div class="grid">
-        <div class="col col--1/3--md">
-          <h1 class="site-header__heading">
-            Total Spent:
-            <span>&#163;{{ data.totalSpent }}</span>
-          </h1>
-        </div>
-        <div class="col col--1/3--md">
-          <button type="button" class="btn--secondary" data-burn-money>Invest in new assets!</button>
-        </div>
-        <div class="col col--1/3--md">
+  {{#if data}}
+    <div class="site-header__section site-header__section--bottom">
+      <div class="wrapper">
+        <div class="grid">
+          <div class="col">
+
+          </div>
+          <div class="col col--1/3--md">
+            <h1 class="site-header__heading">
+              Capital:
+              <span>&#163;{{ data.capital }}</span>
+            </h1>
+            {{#ifCondition data.capital '<' 0 }}
+              <div class="col col--1/3--md">
+              </div>
+            {{/ifCondition}}
+          </div>
+          <div class="col col--1/3--md">
+          <button type="button" class="btn--secondary" data-burn-money>Burn some money!</button>
+          </div>
+          <div class="col col--1/3--md">
+            <h3 class="site-header__sub-heading">
+              Avg Daily Spend:
+              <span>&#163;{{ data.averageDailySpend }}<span>
+            </h3>
+            <h3 class="site-header__sub-heading">
+              Total received:
+              <span>&#163;{{ data.totalReceived }}</span>
+            </h3>
           <h3 class="site-header__sub-heading">
-            Avg Daily Spend:
-            <span>&#163;{{ data.averageDailySpend }}<span>
           </h3>
-          <h3 class="site-header__sub-heading">
-            Total received:
-            <span>&#163;{{ data.totalReceived }}</span>
-          </h3>
-          <h3 class="site-header__sub-heading">
-            Total Asset Worth:
-            <span>&#163;{{ data.totalAssetWorth }}</span>
-          </h3>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {{/if}}
 </header>

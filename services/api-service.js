@@ -20,13 +20,13 @@ function apiRequest() {
   });
 }
 
-function apiRequestPost() {
+function apiRequestPost(formData) {
   return new Promise(function(resolve, reject) {
     request.post(options, function (error, httpResponse, body) {
 
-        if (!error && httpResponse.statusCode === 200) {
-          resolve(body);
-        }
+      if (!error && httpResponse.statusCode === 200) {
+        resolve(body);
+      }
 
     })
   });
@@ -64,7 +64,14 @@ apiService.getAlternativeIncome = function() {
 
 apiService.sendTransactions = function(formData) {
   options.url =  `${API_TO_USE}/userdata/`;
-  options.form = formData;
+  options.body = formData;
 
-  return apiRequestPost(formData);
+  return apiRequestPost();
 }
+
+apiService.getMoreMoney = function() {
+  options.url = `${API_URL}/alternativeincome/`;
+
+  return apiRequest();
+}
+

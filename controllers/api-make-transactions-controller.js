@@ -3,34 +3,49 @@
 var utils = require('../utils/common');
 var contentRepository = require('../data/content-repository');
 var apiService = require('../services/api-service');
+var templateHelpers = require('../templateHelpers.js');
 
-function mapDataToSendToApi() {
+function mapFormData(requestBody) {
+	var requestData = {
+		transactions: []
+	};
+	var fieldKeys = requestBody['transaction-length'].split(',');
 
+	fieldKeys.forEach(function requestBodyKey(element) {
+
+		requestData.transactions.push({
+			"merchant": requestBody[element + '-name'],
+			"amount": Math.round(requestBody[element + '-amount']),
+			"creditOrDebit": (requestBody[element + '-creditdebit'] === 'true') ? 'Debit' : 'Credit',
+			"createdDate": new Date().toISOString()
+		})
+	})
+
+	return requestData;
 }
 
 var apiUpgradeController = {
 
 	post: function(request, response) {
-		console.log('hits 1');
 
-		apiService.sendTransactions({
-			transactions: [
-				{
-					"merchant": "tesco",
-					"amount": 29500,
-					"creditOrDebit": "Debit",
-					"createdDate": "2016-10-30T00:00:00.000"
+		var requestData = mapFormData(request.body);
+
+		apiService.sendTransactions(requestData)
+			.then(function(jsonResponse) {
+
+			var canonicalUrl = utils.getCanonicalUrl(request);
+
+			response.render('index', {
+				layout: false,
+				data: {
+					transactions: jsonResponse.transactions,
+					summary: jsonResponse.summary
 				},
-				{
-					"merchant": "pay",
-					"amount": 344444,
-					"creditOrDebit": "Credit",
-					"createdDate": "2016-10-30T00:00:00.000"
-				}
-			]
-		}).then(function(body) {
-			console.log('we have some body');
-			console.log(body);
+				helpers: templateHelpers,
+				canonicalUrl: canonicalUrl,
+				uuid: utils.randomGuid()
+			});
+
 		})
 	}
 };

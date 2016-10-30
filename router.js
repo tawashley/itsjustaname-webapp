@@ -12,7 +12,7 @@ module.exports = function(app) {
 	var apiUpgradeController = require('./controllers/api-upgrade-controller');
 	var apiSpendController = require('./controllers/api-spend-controller');
 	var apiMakeTransactionsController = require('./controllers/api-make-transactions-controller');
-	var apiAlternativeIncomeController = require('./controllers/api-alternative-income-controller');
+	var apiGetMoreMoneyController = require('./controllers/api-get-more-money-controller');
 
 	app.get('/page-not-found', pageNotFoundController.get);
 	app.get('/error', errorController.get);
@@ -22,6 +22,7 @@ module.exports = function(app) {
 	app.get('/api/spend', apiSpendController.get);
 	app.get('/api/alternativeincome', apiAlternativeIncomeController.get);
 	app.post('/api/make-transactions', apiMakeTransactionsController.post);
+	app.get('/api/getMoreMoney', apiGetMoreMoneyController.get);
 
 
 	app.use(function(request, response) {

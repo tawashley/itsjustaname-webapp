@@ -1,0 +1,22 @@
+//Transaction list styles
+
+.transactions__header {
+  margin-top: $d-gutter--half;
+  font-weight: normal;
+  color: $c-brand-2;
+}
+
+.transaction-list {
+  list-style: none;
+}
+
+.transaction-list__field {
+  padding: $d-gutter--half 0;
+  margin: $d-gutter--half 0;
+  font-size: 18px;
+}
+
+.transaction-list__input {
+  padding: $d-gutter--half;
+  margin-left: $d-gutter--quarter;
+}
