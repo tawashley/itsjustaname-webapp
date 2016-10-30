@@ -11,6 +11,7 @@
 .spend__image {
   display: block;
   margin: $d-gutter auto;
+  max-width: 100%;
 }
 
 .spend__link {
@@ -24,9 +25,17 @@
   }
 }
 
+.spend__link--secondary {
+  @include btn($type: 'secondary');
+
+  @include respond-to-min($bp-med) {
+    margin-left: $d-gutter--half;
+  }
+}
+
 .overlay-narrow {
   @include respond-to-min($bp-med) {
     margin: 0 auto;
-    width: 50%;
+    width: 65%;
   }
 }

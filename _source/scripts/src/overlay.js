@@ -25,8 +25,12 @@ window.hack.overlay = (function(app) {
     overlay.classList.remove(app.class.isVisible);
   }
 
+  function setContent(html) {
+    overlayContent.innerHTML = html;
+  }
+
   function bindEventListeners() {
-    document.querySelector('body').addEventListener('click', handleOverlayCloseClick, false);
+    app.body.addEventListener('click', handleOverlayCloseClick, false);
   }
 
   function handleOverlayCloseClick(event) {
@@ -38,6 +42,7 @@ window.hack.overlay = (function(app) {
   init();
 
   return {
+    setContent: setContent,
     show: showOverlay,
     hide: hideOverlay
   };

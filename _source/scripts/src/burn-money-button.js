@@ -14,6 +14,15 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
 
   function bindEventListeners() {
     burnMoneyButton.addEventListener('click', handleBurnMoneyButtonClick, false);
+    app.body.addEventListener('click', handleRefreshBurnMoney, false);
+  }
+
+  function handleRefreshBurnMoney(event) {
+    if (event.target.hasAttribute('data-burn-money-refresh')) {
+      event.preventDefault();
+      setLoadingUi();
+      refreshBurnMoneyUi();
+    }
   }
 
   function getSpendHtml(spendjson) {
@@ -29,8 +38,9 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
 
     html.push(`<div class="spend__details">`);
     html.push(`<h2 class="upgrade-overlay__sub-heading">&#163;${spendjson.price}</h2>`);
-    html.push(`<img class="spend__image" src="${spendjson.imageUrl}"/>`)
-    html.push(`<a class="spend__link" href="${spendjson.linkToArticle}" class="btn--primary">I can't miss this!</a>`)
+    html.push(`<img class="spend__image" src="${spendjson.bigImageUrl || spendjson.imageUrl}"/>`);
+    html.push(`<a class="spend__link" href="${spendjson.linkToArticle}" class="btn--primary">Take me to the store!</a>`);
+    html.push(`<a class="spend__link spend__link--secondary" href="#" data-burn-money-refresh class="">Show me something else</a>`);
 
     html.push(`</div>`);
     html.push(`</div>`);
@@ -39,7 +49,34 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
     return html.join('');
   }
 
+  function setLoadingUi() {
+    var html = [];;
+
+    html.push(`<div class="wrapper">`);
+    html.push(`<div class="upgrade-overlay overlay-narrow">`);
+
+    html.push(`<button type="button" class="upgrade-overlay__close" data-overlay-close>&#10060</button>`);
+    html.push(`<h1 class="upgrade-overlay__heading">Finding another product...</h1>`);
+
+    html.push(`</div>`);
+    html.push(`</div>`);
+
+    overlay.setContent(html.join(''));
+  }
+
+  function refreshBurnMoneyUi() {
+    fetch(`/api/spend`)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(Spendjson) {
+        overlay.setContent(getSpendHtml(Spendjson));
+      });
+  }
+
   function handleBurnMoneyButtonClick() {
+    burnMoneyButton.innerHTML = 'Getting a product...'
+
     fetch(`/api/spend`)
       .then(function(response) {
         return response.json();

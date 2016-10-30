@@ -4,6 +4,8 @@
 
   @if($type == 'primary') {
     @include _btn-primary();
+  } @else if ($type == 'secondary') {
+    @include _btn-secondary();
   }
 
   transition: background .2s ease-in-out;
@@ -23,6 +25,19 @@
   }
 }
 
+@mixin _btn-secondary() {
+  background: $c-brand-1;
+  color: $c-black;
+
+  &:hover {
+    background: darken($c-brand-1, 10%);
+  }
+}
+
 .btn--primary {
   @include btn($type: 'primary');
+}
+
+.btn--secondary {
+  @include btn($type: 'secondary');
 }
