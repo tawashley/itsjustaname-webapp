@@ -20,7 +20,7 @@ function apiRequest() {
 }
 
 apiService.getTransactions = function() {
-  options.url = `${API_URL_DEV}/transactions`;
+  options.url = `${API_URL}/transactions`;
 
   return apiRequest();
 }
@@ -32,13 +32,13 @@ apiService.getSummary = function() {
 }
 
 apiService.getUpgradeData = function(itemName) {
-  options.url = `${API_URL_DEV}/upgrade/${itemName}`
+  options.url = `${API_URL}/upgrade/${itemName}`
 
   return apiRequest();
 }
 
 apiService.getSpendData = function() {
-  options.url = `${API_URL_DEV}/spend/`;
+  options.url = `${API_URL}/spend/`;
 
   return apiRequest();
 }

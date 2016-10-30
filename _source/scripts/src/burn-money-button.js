@@ -50,7 +50,7 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
   }
 
   function setLoadingUi() {
-    var html = [];;
+    var html = [];
 
     html.push(`<div class="wrapper">`);
     html.push(`<div class="upgrade-overlay overlay-narrow">`);
@@ -75,7 +75,7 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
   }
 
   function handleBurnMoneyButtonClick() {
-    burnMoneyButton.innerHTML = 'Getting a product...'
+    burnMoneyButton.innerHTML = 'Getting a product...';
 
     fetch(`/api/spend`)
       .then(function(response) {
