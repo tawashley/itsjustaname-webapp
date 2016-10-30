@@ -16,10 +16,12 @@ window.hack.overlay = (function(app) {
 
   function showOverlay(options) {
     overlay.classList.add(app.class.isVisible);
+    app.body.classList.add(app.class.hasOverlay);
     overlayContent.innerHTML = options.contentHTML;
   }
 
   function hideOverlay() {
+    app.body.classList.remove(app.class.hasOverlay);
     overlay.classList.remove(app.class.isVisible);
   }
 

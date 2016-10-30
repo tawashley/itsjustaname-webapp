@@ -5,7 +5,8 @@ window.hack.app = (function() {
   return {
     body: document.querySelector('body'),
     class: {
-      isVisible: 'is-visible'
+      isVisible: 'is-visible',
+      hasOverlay: 'has-overlay'
     }
   }
 })()
