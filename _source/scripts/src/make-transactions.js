@@ -37,15 +37,6 @@ window.hack.makeTransactions = (function() {
     html.push(`<input type="number" id="transaction0${counter}-amount" class="transaction-list__input" name="transaction0${counter}-amount" value="" required>`);
     html.push(`</div>`);
 
-    // html.push(`<li data-transaction-list-item>`);
-    // html.push(`<label for="transaction0${counter}-name">Name:</label>`);
-    // html.push(`<input type="text" id="transaction0${counter}-name" name="transaction0${counter}-name" value="" required>`);
-    // html.push(`<label for="transaction0${counter}-creditdebit">Credit / Debit</label>`);
-    // html.push(`<input type="checkbox" id="transaction0${counter}-creditdebit" name="transaction0${counter}-creditdebit" value="">`);
-    // html.push(`<label for="transaction0${counter}-amount">Amount</label>`);
-    // html.push(`<input type="number" id="transaction01-amount" name="transaction0${counter}-amount" value="" required>`);
-    // html.push(`</li>`);
-
     return html.join('');
   }
 

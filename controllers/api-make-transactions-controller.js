@@ -30,25 +30,7 @@ var apiUpgradeController = {
 
 		var requestData = mapFormData(request.body);
 
-		console.log(requestData);
-
 		apiService.sendTransactions(requestData)
-		// apiService.sendTransactions({
-		// 		transactions: [
-		// 			{
-		// 				"merchant": "tesco",
-		// 				"amount": 29500,
-		// 				"creditOrDebit": "Debit",
-		// 				"createdDate": "2016-10-30T00:00:00.000"
-		// 			},
-		// 			{
-		// 				"merchant": "pay",
-		// 				"amount": 344444,
-		// 				"creditOrDebit": "Credit",
-		// 				"createdDate": "2016-10-30T00:00:00.000"
-		// 			}
-		// 		]
-		// 	})
 			.then(function(jsonResponse) {
 
 			var canonicalUrl = utils.getCanonicalUrl(request);
