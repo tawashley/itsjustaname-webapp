@@ -18,7 +18,7 @@
 .site-header__main-heading {
   font-weight: normal;
   color: $c-white;
-  text-transform: none; 
+  text-transform: none;
 }
 
 .site-header__heading {
@@ -42,5 +42,6 @@
 }
 
 .main-buttons {
-  margin-top: $d-gutter--half;
+  padding: $d-gutter 0;
+  border-bottom: 1px solid $c-brand-3;
 }
