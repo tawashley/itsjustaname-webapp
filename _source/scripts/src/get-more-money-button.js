@@ -70,7 +70,7 @@ window.hack.needMoreMoney = (function(app, overlay, undefined) {
 		html.push(`<h1 class="upgrade-overlay__heading">${getMoreMoney.name}</h1>`);
 
 		html.push(`<div class="spend__details">`);
-		html.push(`<h2 class="upgrade-overlay__sub-heading">&#163;${getMoreMoney.notes}</h2>`);
+		html.push(`<h2 class="upgrade-overlay__sub-heading">${getMoreMoney.notes}</h2>`);
 		html.push(`<img class="spend__image" src="${getMoreMoney.bigImageUrl || getMoreMoney.imageUrl}"/>`);
 		html.push(`<a class="spend__link" href="${getMoreMoney.link}" class="btn--primary" target="_blank" data-gmm-buy-item>I want it!</a>`);
 		html.push(`<a class="spend__link spend__link--secondary btn--moving" href="#" data-gmm-no-buy>Oh heeeell no!</a>`);
