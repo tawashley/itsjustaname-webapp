@@ -11,7 +11,7 @@
     </p>
   </div>
 
-  {{#ifCondition itemData.name '===' 'Tesco'}}
+  {{#if itemData.hasUpgrade}}
     <button type="button" name="button" data-transaction-item-upgrade="{{itemData.name}}">One up this purchase!</button>
-  {{/ifCondition}}
+  {{/if}}
 </div>

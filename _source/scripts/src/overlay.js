@@ -1,31 +1,36 @@
 // Requires: _source/scripts/src/namespace.js
-window.hack.overlay = (function() {
+// Requires: _source/scripts/src/app.js
+window.hack.overlay = (function(app) {
 
   'use strict';
 
   var dataOverlay = '[data-overlay]';
   var dataOverlayContent = '[data-overlay-content]';
-  var dataOverlayClose = '[data-overlay-close]';
 
   var overlay = document.querySelector(dataOverlay);
   var overlayContent = document.querySelector(dataOverlayContent);
-  var overlayClose = document.querySelector(dataOverlayClose);
 
   function init() {
     bindEventListeners();
   }
 
   function showOverlay(options) {
-    overlay.classList.add('is-visible');
+    overlay.classList.add(app.class.isVisible);
     overlayContent.innerHTML = options.contentHTML;
   }
 
   function hideOverlay() {
-    overlay.classList.remove('is-visible');
+    overlay.classList.remove(app.class.isVisible);
   }
 
   function bindEventListeners() {
-    overlayClose.addEventListener('click', hideOverlay, false);
+    document.querySelector('body').addEventListener('click', handleOverlayCloseClick, false);
+  }
+
+  function handleOverlayCloseClick(evemt) {
+    if (event.target.hasAttribute('data-overlay-close')) {
+      hideOverlay();
+    }
   }
 
   init();
@@ -35,4 +40,4 @@ window.hack.overlay = (function() {
     hide: hideOverlay
   };
 
-})();
+})(window.hack.app);

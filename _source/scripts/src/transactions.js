@@ -1,6 +1,7 @@
 // Requires: _source/scripts/src/namespace.js
 // Requires: _source/scripts/src/overlay.js
-window.hack.transactions = (function(overlay, undefined) {
+// Requires: _source/scripts/src/app.js
+window.hack.transactions = (function(app, overlay, undefined) {
 
   'use strict';
 
@@ -62,8 +63,6 @@ window.hack.transactions = (function(overlay, undefined) {
         return response.json();
       })
       .then(function(upgradeJson) {
-        console.log(upgradeJson);
-
         overlay.show({
           contentHTML: getUpgradeHtml(upgradeJson)
         });
@@ -75,9 +74,9 @@ window.hack.transactions = (function(overlay, undefined) {
     var transactionWrapper = transactionItemsButton.parentNode;
     var transactionItems = transactionWrapper.querySelector(dataTransactionItems);
 
-    transactionItems.classList.toggle('is-visible');
+    transactionItems.classList.toggle(app.class.isVisible);
 
-    if(transactionItems.classList.contains('is-visible')) {
+    if(transactionItems.classList.contains(app.class.isVisible)) {
       transactionItemsButton.innerHTML = 'Hide transactions';
     } else {
       transactionItemsButton.innerHTML = 'Show transactions';
@@ -87,4 +86,4 @@ window.hack.transactions = (function(overlay, undefined) {
 
   init();
 
-})(window.hack.overlay);
+})(window.hack.app, window.hack.overlay);

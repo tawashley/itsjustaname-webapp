@@ -8,7 +8,7 @@ var options = {
 }
 
 apiService.getTransactions = function() {
-  options.url = API_URL + '/transactions';
+  options.url = API_URL_DEV + '/transactions';
 
   return new Promise(function(resolve, reject) {
     request(options, function (error, response, json) {
