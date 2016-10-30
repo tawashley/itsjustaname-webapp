@@ -3,6 +3,7 @@
 var utils = require('../utils/common');
 var contentRepository = require('../data/content-repository');
 var apiService = require('../services/api-service');
+var templateHelpers = require('../templateHelpers.js');
 
 function mapDataToSendToApi() {
 
@@ -29,7 +30,22 @@ var apiUpgradeController = {
 				}
 			]
 		}).then(function(body) {
-			console.log('we have some body');
+
+			var canonicalUrl = utils.getCanonicalUrl(request);
+
+			response.url = '/';
+			
+			response.render('index', {
+				layout: false,
+				data: {
+					transactions: body.transactions,
+					summary: body.summary
+				},
+				helpers: templateHelpers,
+				canonicalUrl: canonicalUrl,
+				uuid: utils.randomGuid()
+			});
+
 			console.log(body);
 		})
 	}

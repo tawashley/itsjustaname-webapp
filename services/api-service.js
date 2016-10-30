@@ -19,7 +19,7 @@ function apiRequest() {
   });
 }
 
-function apiRequestPost() {
+function apiRequestPost(formData) {
   return new Promise(function(resolve, reject) {
     request.post(options, function (error, httpResponse, body) {
 
@@ -57,7 +57,7 @@ apiService.getSpendData = function() {
 
 apiService.sendTransactions = function(formData) {
   options.url =  `${API_URL}/userdata/`;
-  options.form = formData;
+  options.body = formData;
 
-  return apiRequestPost(formData);
+  return apiRequestPost();
 }

@@ -25,6 +25,12 @@
             Total received:
             <span>&#163;{{ data.totalReceived }}</span>
           </h3>
+          {{#if data.capital}}
+            <h3 class="site-header__sub-heading">
+              Capital:
+              <span>&#163;{{ data.capital }}</span>
+            </h3>
+          {{/if}}
         </div>
       </div>
     </div>
