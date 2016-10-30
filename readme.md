@@ -38,6 +38,7 @@ Module | Version | Repo
 cartridge-copy-assets | 1.0.0 | https://github.com/cartridge/cartridge-copy-assetscartridge-sass | 2.2.0 | https://github.com/cartridge/cartridge-sasscartridge-javascript | 1.0.0 | https://github.com/cartridge/cartridge-javascript
 [//]: <> (Modules end)
 
+
 ### Adding modules
 
 Additional modules can be added with the [Cartridge command line tool](https://github.com/cartridge/cartridge-cli). To use it you must install it globally using npm.

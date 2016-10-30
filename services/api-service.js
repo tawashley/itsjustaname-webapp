@@ -61,3 +61,9 @@ apiService.sendTransactions = function(formData) {
 
   return apiRequestPost();
 }
+
+apiService.getMoreMoney = function() {
+  options.url = `${API_URL_DEV}/alternativeincome/`;
+
+  return apiRequest();
+}

@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="site-header__section site-header__section--top">
     <div class="wrapper">
-      <h1 class="site-header__main-heading">It's just an app</h1>
+      <h1 class="site-header__main-heading">Got spare cash?</h1>
     </div>
   </div>
   <div class="site-header__section site-header__section--bottom">
@@ -9,9 +9,14 @@
       <div class="grid">
         <div class="col col--1/3--md">
           <h1 class="site-header__heading">
-            Total Spent:
-            <span>&#163;{{ data.totalSpent }}</span>
+            Capital:
+            <span>&#163;{{ data.capital }}</span>
           </h1>
+          {{#ifCondition data.capital '<' 0 }}
+            <div class="col col--1/3--md">
+              <button type="button" class="btn--secondary" data-need-more-money>I NEED MONEY!</button>
+            </div>
+          {{/ifCondition}}
         </div>
         <div class="col col--1/3--md">
           <button type="button" class="btn--secondary" data-burn-money>Burn some money!</button>
@@ -25,12 +30,10 @@
             Total received:
             <span>&#163;{{ data.totalReceived }}</span>
           </h3>
-          {{#if data.capital}}
-            <h3 class="site-header__sub-heading">
-              Capital:
-              <span>&#163;{{ data.capital }}</span>
-            </h3>
-          {{/if}}
+          <h3 class="site-header__sub-heading">
+            Total spent:
+            <span>&#163;{{ data.totalSpent }}</span>
+          </h3>
         </div>
       </div>
     </div>
