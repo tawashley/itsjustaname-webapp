@@ -1,24 +1,45 @@
 // Requires: _source/scripts/src/namespace.js
 // Requires: _source/scripts/src/app.js
-window.hack.makeTransactions = (function() {
+// Requires: _source/scripts/src/overlay.js
+window.hack.makeTransactions = (function(overlay, undefined) {
 
   'use strict';
 
   var dataTransactionAddLine = '[data-transaction-add-line]';
   var dataTransactionList = '[data-transaction-list]';
   var dataTransactionListLength = '[data-transaction-list-length]';
+  var dataTransactionForm = '[data-make-transaction-form]';
 
   var transactionAddLineButton = document.querySelector(dataTransactionAddLine);
   var transactionList = document.querySelector(dataTransactionList);
   var transactionListLength = document.querySelector(dataTransactionListLength);
+  var transactionForm = document.querySelector(dataTransactionForm);
   var counter = 1;
 
   var cacheList = ['transaction01'];
 
   function bindEventListeners() {
-    if(document.querySelector('[data-make-transaction]')) {
+    if(document.querySelector('[data-make-transaction-form]')) {
       transactionAddLineButton.addEventListener('click', handleAddLineButtonClick, false);
     }
+
+    transactionForm.addEventListener('submit', function(event) {
+      overlay.show({
+        contentHTML: getLoadingHTML()
+      });
+    }, false);
+  }
+
+  function getLoadingHTML() {
+    var html = [];
+
+    html.push('<div class="wrapper">');
+    html.push('<div class="overlay-narrow">');
+    html.push('<h2 class="transactions__header overlay__spaced">Analysing transaction data...</h2>');
+    html.push('</div>');
+    html.push('</div>');
+
+    return html.join('');
   }
 
   function getListItemHtml() {
@@ -45,8 +66,8 @@ window.hack.makeTransactions = (function() {
     html.push(`<input type="number" id="transaction0${counter}-amount" class="transaction-list__input" name="transaction0${counter}-amount" value="" required>`);
     html.push(`</div>`);
     html.push(`</div>`);
-    html.push(`</li>`)
-    html.push(`</div>`)
+    html.push(`</li>`);
+    html.push(`</div>`);
 
     return html.join('');
   }
@@ -65,4 +86,4 @@ window.hack.makeTransactions = (function() {
   }
 
   init();
-})();
+})(window.hack.overlay);

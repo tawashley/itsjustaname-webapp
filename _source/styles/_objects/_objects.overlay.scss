@@ -27,3 +27,8 @@
   width: 100%;
   overflow: auto;
 }
+
+.overlay__spaced {
+  background: $c-white;
+  padding: $d-gutter;
+}

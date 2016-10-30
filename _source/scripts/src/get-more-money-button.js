@@ -15,14 +15,14 @@ window.hack.needMoreMoney = (function(app, overlay, undefined) {
 	function bindEventListeners() {
 		needMoreMoneyButton.addEventListener('click', handleNeedMoreMoneyButtonClick, false);
 		app.body.addEventListener('mouseover', handleNoBuyButton, false);
-	    app.body.addEventListener('click', handleCloseGmmOverlay, false);
-	    app.body.addEventListener('click', handleBuyItem, false);
+    app.body.addEventListener('click', handleCloseGmmOverlay, false);
+    app.body.addEventListener('click', handleBuyItem, false);
 	}
 
 	function handleNoBuyButton(event) {
 		if (event.target.hasAttribute('data-gmm-no-buy')) {
-			event.target.style.left = (Math.random()*300)+"px";
-	        event.target.style.top = (Math.random()*300)+"px";
+			event.target.style.left = (Math.random()*300)+ 'px';
+	        event.target.style.top = (Math.random()*300)+ 'px';
     	}
 	}
 
