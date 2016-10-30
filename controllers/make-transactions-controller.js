@@ -17,7 +17,6 @@ var MakeTransactionsController = {
 
 		makeTransactionsViewModel
 			.then(function(data) {
-				console.log(data);
 				response.render('make-transactions', data);
 			});
 	}
