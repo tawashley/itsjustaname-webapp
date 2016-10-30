@@ -8,5 +8,5 @@ window.hack.app = (function() {
       isVisible: 'is-visible',
       hasOverlay: 'has-overlay'
     }
-  }
-})()
+  };
+})();

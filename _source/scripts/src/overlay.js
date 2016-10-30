@@ -29,7 +29,7 @@ window.hack.overlay = (function(app) {
     document.querySelector('body').addEventListener('click', handleOverlayCloseClick, false);
   }
 
-  function handleOverlayCloseClick(evemt) {
+  function handleOverlayCloseClick(event) {
     if (event.target.hasAttribute('data-overlay-close')) {
       hideOverlay();
     }
