@@ -2,7 +2,7 @@
 
 var utils = require('../utils/common');
 var contentRepository = require('../data/content-repository');
-var ViewModel = require('../view_models/home');
+var ViewModel = require('../view_models/make-transactions');
 
 var MakeTransactionsController = {
 

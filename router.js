@@ -16,8 +16,8 @@ module.exports = function(app) {
 
 	app.get('/page-not-found', pageNotFoundController.get);
 	app.get('/error', errorController.get);
-	app.get('/', homeController.get);
-	app.get('/make-transaction', makeTransactionsController.get);
+	app.get('/timeline', homeController.get);
+	app.get('/', makeTransactionsController.get);
 	app.get('/api/upgrade/:itemName', apiUpgradeController.get);
 	app.get('/api/spend', apiSpendController.get);
 	// app.get('/api/alternativeincome', apiAlternativeIncomeController.get);
