@@ -1,31 +1,39 @@
 {{> header}}
 
 <section class="wrapper">
-  <h1 class="transactions__header">Wallet alot lighter? - confess your sins here</h1>
+  <h1 class="transactions__header">Start by telling us some of your transactions.</h1>
   <form action="/api/make-transactions" method="POST" data-make-transaction>
     <ul class="transaction-list" data-transaction-list>
-      <li data-transaction-list-item>
-        <div class="transaction-list__field">
-          <label for="transaction01-name">Name:</label>
-          <input type="text" class="transaction-list__input" id="transaction01-name" name="transaction01-name" value="" required>
-        </div>
-
-        <div class="transaction-list__field">
-          <label for="transaction01-creditdebit">Is Debit?</label>
-          <input type="checkbox" id="transaction01-creditdebit" class="transaction-list__input" name="transaction01-creditdebit" value="true">
-        </div>
-
-        <div class="transaction-list__field">
-          <label for="transaction01-amount">Amount</label>
-          <input type="number" id="transaction01-amount" class="transaction-list__input" name="transaction01-amount" value="" required>
-        </div>
-      </li>
+      <div class="grid">
+        <li data-transaction-list-item>
+          <div class="col col--1/3--md">
+            <div class="transaction-list__field">
+              <label for="transaction01-name" class="transaction-list__label">Description:</label>
+              <input type="text" class="transaction-list__input" id="transaction01-name" name="transaction01-name" value="" required>
+            </div>
+          </div>
+          <div class="col col--1/3--md">
+            <div class="transaction-list__field">
+              <label for="transaction01-creditdebit" class="transaction-list__label">Check if debit:</label>
+              <input type="checkbox" id="transaction01-creditdebit" class="transaction-list__input" name="transaction01-creditdebit" value="true">
+            </div>
+          </div>
+          <div class="col col--1/3--md">
+            <div class="transaction-list__field">
+              <label for="transaction01-amount" class="transaction-list__label">Amount:</label>
+              <input type="number" id="transaction01-amount" class="transaction-list__input" name="transaction01-amount" value="" required>
+            </div>
+          </div>
+        </li>
+      </div>
     </ul>
 
     <input type="hidden" name="transaction-length" value="transaction01" data-transaction-list-length>
 
-    <button type="submit" class="btn--primary">Use my money!</button>
-    <button type="button" class="btn--secondary" data-transaction-add-line>I need another</button>
+    <div class="transactions__btn-wrapper">
+      <button type="submit" class="btn--primary">Use my money!</button>
+      <button type="button" class="btn--secondary" data-transaction-add-line>I need another</button>
+    </div>
   </form>
 </section>
 
