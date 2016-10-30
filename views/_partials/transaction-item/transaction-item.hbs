@@ -1,4 +1,4 @@
-<a type="button" class="transaction-item {{#if itemData.hasUpgrade}}transaction-item--upgrade{{/if}}" {{#if itemData.hasUpgrade}}data-transaction-item-upgrade="{{itemData.name}}"{{/if}}>
+<a type="button" class="transaction-item transaction-item--{{ itemData.type }} {{#if itemData.hasUpgrade}}transaction-item--upgrade{{/if}}" {{#if itemData.hasUpgrade}}data-transaction-item-upgrade="{{itemData.name}}"{{/if}}>
   <div class="transaction-item__content transaction-item__content--has-image" {{#if itemData.imageUrl}}style="background-image:url('{{itemData.imageUrl}}')"{{/if}}>
     <div class="transaction-item__content-inner">
       <p class="transaction-item__name">
@@ -12,4 +12,9 @@
       </p>
     </div>
   </div>
+  {{#if itemData.hasUpgrade}}
+    <div class="transaction-item__upgrade-text">
+      Upgrade Spending
+    </div>
+  {{/if}}
 </a>
