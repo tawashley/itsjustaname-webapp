@@ -16,7 +16,9 @@ window.hack.makeTransactions = (function() {
   var cacheList = ['transaction01'];
 
   function bindEventListeners() {
-    transactionAddLineButton.addEventListener('click', handleAddLineButtonClick, false);
+    if(document.querySelector('[data-make-transaction]')) {
+      transactionAddLineButton.addEventListener('click', handleAddLineButtonClick, false);
+    }
   }
 
   function getListItemHtml() {
