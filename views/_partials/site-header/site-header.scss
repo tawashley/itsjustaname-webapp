@@ -1,7 +1,4 @@
 //Site header styles
-.site-header {
-  // background: $c-brand-2;
-}
 
 .site-header__section {
   text-align: center;
@@ -10,17 +7,18 @@
 }
 
 .site-header__section--top {
-  background: $c-brand-3;
+  background: #FF851B;
   text-transform: uppercase;
 }
 
 .site-header__section--bottom {
-  background: $c-brand-2;
+  background: lighten(#FF851B, 10%);
 }
 
 .site-header__main-heading {
   font-weight: normal;
   color: $c-white;
+  text-transform: none; 
 }
 
 .site-header__heading {
@@ -41,4 +39,8 @@
   @include respond-to-min($bp-med) {
     text-align: right;
   }
+}
+
+.main-buttons {
+  margin-top: $d-gutter--half;
 }

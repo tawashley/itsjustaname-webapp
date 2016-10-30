@@ -1,12 +1,8 @@
-{{> header summaryData=data.summary}}
+{{> header}}
 
 <section class="wrapper">
-  <!-- NAME (TEXT)  -->
-  <!-- CREDIT OR DEBIT (CHECKBOX)  -->
-  <!-- AMOUNT (AMOUNT)  -->
-  <!-- DATE (GENERATED)  -->
   <h1 class="transactions__header">Wallet alot lighter? - confess your sins here</h1>
-  <form action="/api/make-transactions" method="POST">
+  <form action="/api/make-transactions" method="POST" data-make-transaction>
     <ul class="transaction-list" data-transaction-list>
       <li data-transaction-list-item>
         <div class="transaction-list__field">

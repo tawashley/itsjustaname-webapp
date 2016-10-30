@@ -20,8 +20,10 @@ module.exports = function(app) {
 	app.get('/make-transaction', makeTransactionsController.get);
 	app.get('/api/upgrade/:itemName', apiUpgradeController.get);
 	app.get('/api/spend', apiSpendController.get);
+	// app.get('/api/alternativeincome', apiAlternativeIncomeController.get);
 	app.post('/api/make-transactions', apiMakeTransactionsController.post);
 	app.get('/api/getMoreMoney', apiGetMoreMoneyController.get);
+
 
 	app.use(function(request, response) {
 		response.redirect('/page-not-found');
