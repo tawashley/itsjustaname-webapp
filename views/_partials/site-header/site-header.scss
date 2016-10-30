@@ -18,6 +18,7 @@
 .site-header__main-heading {
   font-weight: normal;
   color: $c-white;
+  text-transform: none; 
 }
 
 .site-header__heading {
@@ -38,4 +39,8 @@
   @include respond-to-min($bp-med) {
     text-align: right;
   }
+}
+
+.main-buttons {
+  margin-top: $d-gutter--half;
 }
