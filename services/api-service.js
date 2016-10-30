@@ -7,9 +7,7 @@ var options = {
   json: true
 }
 
-apiService.getTransactions = function() {
-  options.url = API_URL_DEV + '/transactions';
-
+function apiRequest() {
   return new Promise(function(resolve, reject) {
     request(options, function (error, response, json) {
 
@@ -21,30 +19,26 @@ apiService.getTransactions = function() {
   });
 }
 
+apiService.getTransactions = function() {
+  options.url = `${API_URL_DEV}/transactions`;
+
+  return apiRequest();
+}
+
 apiService.getSummary = function() {
-  options.url = API_URL + '/summary';
+  options.url = `${API_URL}/summary`;
 
-  return new Promise(function(resolve, reject) {
-    request(options, function (error, response, json) {
-
-        if (!error && response.statusCode === 200) {
-          resolve(json);
-        }
-
-    })
-  });
+  return apiRequest();
 }
 
 apiService.getUpgradeData = function(itemName) {
   options.url = `${API_URL_DEV}/upgrade/${itemName}`
 
-  return new Promise(function(resolve, reject) {
-    request(options, function (error, response, json) {
+  return apiRequest();
+}
 
-        if (!error && response.statusCode === 200) {
-          resolve(json);
-        }
+apiService.getSpendData = function() {
+  options.url = `${API_URL_DEV}/spend/`;
 
-    })
-  });
+  return apiRequest();
 }
