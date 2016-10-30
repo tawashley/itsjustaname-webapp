@@ -4,7 +4,6 @@ window.hack.transactions = (function(overlay, undefined) {
 
   'use strict';
 
-  var dataTransactionWrapper = '[data-transaction-day]';
   var dataShowTransactions = '[data-show-transactions]';
   var dataTransactionItems = '[data-transaction-items]';
   var dataTransactionUpgradeButton = '[data-transaction-item-upgrade]';
@@ -19,19 +18,19 @@ window.hack.transactions = (function(overlay, undefined) {
   function bindEventListeners() {
     showTransactionButtons.forEach(function getSingleButton(button) {
       button.addEventListener('click', handleShowButtonClick , false);
-    })
+    });
 
     transactionUpgradeButtons.forEach(function getSingleUpgradeButton(upgradeButton) {
       upgradeButton.addEventListener('click', handleUpgradeButtonClick, false);
-    })
+    });
   }
 
   function getUpgradeHtml(json) {
     var html = [];
 
-    html.push(`<div class="wrapper">`)
+    html.push(`<div class="wrapper">`);
     html.push(`<div class="upgrade-overlay">`);
-    html.push(`<button type="button" class="upgrade-overlay__close" data-overlay-close>&#10060</button>`)
+    html.push(`<button type="button" class="upgrade-overlay__close" data-overlay-close>&#10060</button>`);
     html.push(`<h1 class="upgrade-overlay__heading">Tied of NOT paying premium?</h1>`);
     html.push(`<h2 class="upgrade-overlay__sub-heading">Go on, spoil yourself!</h2>`);
     html.push(`<ul class="upgrade-overlay__items">`);
@@ -60,7 +59,7 @@ window.hack.transactions = (function(overlay, undefined) {
 
     fetch(`/api/upgrade/${transactionName}`)
       .then(function(response) {
-        return response.json()
+        return response.json();
       })
       .then(function(upgradeJson) {
         console.log(upgradeJson);
@@ -68,7 +67,7 @@ window.hack.transactions = (function(overlay, undefined) {
         overlay.show({
           contentHTML: getUpgradeHtml(upgradeJson)
         });
-      })
+      });
   }
 
   function handleShowButtonClick(event) {
@@ -88,4 +87,4 @@ window.hack.transactions = (function(overlay, undefined) {
 
   init();
 
-})(window.hack.overlay)
+})(window.hack.overlay);

@@ -69,6 +69,7 @@ function getTaskConfig(projectConfig) {
 			"passfail"      : false,
 			"white"         : false,
 			"globals": {
+				"fetch": true,
 				"$": true,
 				"clearInterval": true,
 				"clearTimeout": true,
