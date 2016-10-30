@@ -23,9 +23,11 @@ function apiRequestPost(formData) {
   return new Promise(function(resolve, reject) {
     request.post(options, function (error, httpResponse, body) {
 
-        if (!error && httpResponse.statusCode === 200) {
-          resolve(body);
-        }
+      console.log(httpResponse);
+
+      if (!error && httpResponse.statusCode === 200) {
+        resolve(body);
+      }
 
     })
   });
