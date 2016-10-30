@@ -46,7 +46,7 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
     html.push(`<div class="spend__details">`);
     html.push(`<h2 class="upgrade-overlay__sub-heading">&#163;${spendjson.price}</h2>`);
     html.push(`<img class="spend__image" src="${spendjson.bigImageUrl || spendjson.imageUrl}"/>`);
-    html.push(`<a class="spend__link" href="${spendjson.linkToArticle}" class="btn--primary">Take me to the store!</a>`);
+    html.push(`<a class="spend__link" href="${spendjson.linkToArticle}" class="btn--primary" target="_blank">Take me to the store!</a>`);
     html.push(`<a class="spend__link spend__link--secondary" href="#" data-burn-money-refresh class="">Show me something else</a>`);
 
     html.push(`</div>`);
