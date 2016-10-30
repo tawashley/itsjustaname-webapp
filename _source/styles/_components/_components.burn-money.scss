@@ -1,0 +1,32 @@
+//Burn money styles
+.site-header__button {
+  @include btn();
+  margin-top: $d-gutter--half;
+}
+
+.spend__details {
+  text-align: center;
+}
+
+.spend__image {
+  display: block;
+  margin: $d-gutter auto;
+}
+
+.spend__link {
+  display: inline-block;
+  margin-top: $d-gutter--half;
+  text-align: center;
+  @include btn();
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.overlay-narrow {
+  @include respond-to-min($bp-med) {
+    margin: 0 auto;
+    width: 50%;
+  }
+}
