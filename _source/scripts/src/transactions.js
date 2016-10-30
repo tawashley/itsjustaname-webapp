@@ -31,7 +31,8 @@ window.hack.transactions = (function(overlay, undefined) {
 
     html.push(`<div class="wrapper">`)
     html.push(`<div class="upgrade-overlay">`);
-    html.push(`<h1 class="upgrade-overlay__heading">Tied of not paying premium?</h1>`);
+    html.push(`<button type="button" class="upgrade-overlay__close" data-overlay-close>&#10060</button>`)
+    html.push(`<h1 class="upgrade-overlay__heading">Tied of NOT paying premium?</h1>`);
     html.push(`<h2 class="upgrade-overlay__sub-heading">Go on, spoil yourself!</h2>`);
     html.push(`<ul class="upgrade-overlay__items">`);
 

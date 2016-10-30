@@ -11,14 +11,28 @@ window.hack.overlay = (function() {
 
   'use strict';
 
-  return {
-    show: function(options) {
-      overlay.classList.add('is-visible');
-      overlayContent.innerHTML = options.contentHTML
-    },
-    hide: function() {
-      overlay.classList.remove('is-visible');
-    }
+  function init() {
+    bindEventListeners();
   }
+
+  function showOverlay(options) {
+    overlay.classList.add('is-visible');
+    overlayContent.innerHTML = options.contentHTML;
+  }
+
+  function hideOverlay() {
+    overlay.classList.remove('is-visible');
+  }
+
+  function bindEventListeners() {
+    overlayClose.addEventListener('click', hideOverlay, false);
+  }
+
+  return {
+    show: showOverlay,
+    hide: hideOverlay
+  }
+
+  init();
 
 })()

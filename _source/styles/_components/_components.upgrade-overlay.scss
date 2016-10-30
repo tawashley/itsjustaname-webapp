@@ -2,6 +2,7 @@
 .upgrade-overlay {
   background: $c-white;
   padding: $d-gutter;
+  position: relative;
 }
 
 .upgrade-overlay__heading {
@@ -16,6 +17,15 @@
   margin-bottom: $d-gutter--half;
   font-weight: normal;
   color: $c-brand-5;
+}
+
+.upgrade-overlay__close {
+  position: absolute;
+  right: $d-gutter;
+  top: $d-gutter;
+  outline: none;
+  border: 0;
+  background: transparent;
 }
 
 .upgrade-item__link {
