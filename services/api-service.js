@@ -55,6 +55,12 @@ apiService.getSpendData = function() {
   return apiRequest();
 }
 
+apiService.getAlternativeIncome = function() {
+  options.url = `${API_URL}/alternativeincome/`;
+
+  return apiRequest();
+}
+
 apiService.sendTransactions = function(formData) {
   options.url =  `${API_URL}/userdata/`;
   options.form = formData;
