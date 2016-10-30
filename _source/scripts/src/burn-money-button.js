@@ -107,9 +107,9 @@ window.hack.burnMoney = (function(app, overlay, undefined) {
       .then(function(response) {
         return response.json();
       })
-      .then(function(Spendjson) {
+      .then(function(spendJson) {
         overlay.show({
-          contentHTML: getSpendHtml(Spendjson)
+          contentHTML: getSpendHtml(spendJson)
         });
       });
   }
